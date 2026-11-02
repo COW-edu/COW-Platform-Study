@@ -5,11 +5,11 @@ public class NoticeController {
     private final NoticeService noticeService;
 
     public NoticeDetailResponseDto createNotice( NoticeCreateRequestDto request){
-        return noticeService.create();
+        return noticeService.create(request);
     }
 
     public NoticeDetailResponseDto updateNotice( Long noticeId, NoticeUpdateRequestDto request){
-        return noticeService.update();
+        return noticeService.update(noticeId, request);
     }
 
     public void deleteNotice( Long noticeId) {
