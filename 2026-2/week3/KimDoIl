@@ -1,0 +1,52 @@
+package com.example.To_Do.controller;
+
+public class CategoryController {
+
+    private final CategoryService categoryService;
+
+    public CategoryResponseDTO createCategory(CategoryCreateRequestDTO requestDTO) {
+        return categoryService.createCategory(requestDTO);
+    }
+
+    public List<CategoryResponseDTO> getCategoryList() {
+        return categoryService.getCategoryList();
+    }
+
+    public CategoryResponseDTO getCategory(Long id) {
+        return categoryService.getCategory(id);
+    }
+
+    public CategoryResponseDTO updateCategory(Long id, CategoryUpdateRequestDTO requestDTO) {
+        return categoryService.updateCategory(id, requestDTO);
+    }
+
+    public void deleteCategory(Long id) {
+        categoryService.deleteCategory(id);
+    }
+}
+
+
+public class ToDoController {
+
+    private final ToDoService todoService;
+
+    public ToDoResponseDTO createToDo(ToDoCreateRequestDTO requestDTO) {
+        return todoService.createToDo(requestDTO);
+    }
+
+    public List<ToDoResponseDTO> getToDoList() {
+        return todoService.getToDoList();
+    }
+
+    public ToDoResponseDTO getToDo(Long id) {
+        return todoService.getToDo(id);
+    }
+
+    public ToDoResponseDTO updateToDo(Long id, ToDoUpdateRequestDTO requestDTO) {
+        return todoService.updateToDo(id, requestDTO);
+    }
+
+    public void deleteToDo(Long id) {
+        todoService.deleteToDo(id);
+    }
+}
