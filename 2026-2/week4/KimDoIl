@@ -62,11 +62,6 @@ import java.util.List;
 public class CategoryController {
     private final CategoryService categoryService;
 
-    @GetMapping
-    public List<CategoryResponseDto> searchCategory(@RequestParam String category) {
-        return categoryService.searchCategory(category);
-    }
-
     @PostMapping("/pick")
     public CategoryResponseDto pickCategory(@RequestBody CategoryPickRequestDto requestDto) {
         return categoryService.pickCategory(requestDto);
