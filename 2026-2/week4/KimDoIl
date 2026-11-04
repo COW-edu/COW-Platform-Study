@@ -1,0 +1,74 @@
+// 1. ToDoController
+package com.example.demo.domain.todo.controller;
+
+import com.example.demo.domain.todo.service.TodoService;
+import lombok.RequiredArgsConstructor;
+import org.springframework.web.bind.annotation.*;
+import java.util.List;
+
+@RestController
+@RequiredArgsConstructor
+@RequestMapping("/api/todo")
+public class TodoController {
+
+    private final TodoService todoService;
+
+    @PostMapping
+    public TodoResponseDto createTodo(@RequestBody TodoCreateRequestDto requestDto){
+        return todoService.createTodo(requestDto);
+    }
+
+    @PostMapping("/title")
+    public TodoResponseDto createTodoTitle(@RequestBody TodoTitleRequestDto requestDto) {
+        return todoService.createTodoTitle(requestDto);
+    }
+
+    @PostMapping("/content")
+    public TodoResponseDto createTodoContent(@RequestBody TodoContentRequestDto requestDto) {
+        return todoService.createTodoContent(requestDto);
+    }
+
+    @PostMapping("/category")
+    public TodoResponseDto createTodoCategory(@RequestBody TodoCategoryRequestDto requestDto) {
+        return todoService.createTodoCategory(requestDto);
+    }
+
+    @PostMapping("/is_completed")
+    public TodoResponseDto createTodoIsCompleted(@RequestBody TodoCompletedRequestDto requestDto) {
+        return todoService.createTodoIsCompleted(requestDto);
+    }
+
+    @PatchMapping("/title/patch")
+    public TodoResponseDto updateTodoTitle(@RequestBody TodoTitleUpdateDto requestDto) {
+        return todoService.updateTodoTitle(requestDto);
+    }
+
+    @PatchMapping("/content/patch")
+    public TodoResponseDto updateTodoContent(@RequestBody TodoContentUpdateDto requestDto) {
+        return todoService.updateTodoContent(requestDto);
+    }
+
+// 2. CategoryController
+package com.example.demo.domain.todo.controller;
+
+import com.example.demo.domain.category.service.CategoryService;
+import lombok.RequiredArgsConstructor;
+import org.springframework.web.bind.annotation.*;
+import java.util.List;
+
+@RestController
+@RequiredArgsConstructor
+@RequestMapping("/api/todo/search/category")
+public class CategoryController {
+    private final CategoryService categoryService;
+
+    @PostMapping("/pick")
+    public CategoryResponseDto pickCategory(@RequestBody CategoryPickRequestDto requestDto) {
+        return categoryService.pickCategory(requestDto);
+    }
+
+    @PostMapping("/create_MyCategory")
+    public CategoryResponseDto createMyCategory(@RequestBody MyCategoryRequestDto requestDto) {
+        return categoryService.createMyCategory(requestDto);
+    }
+}
