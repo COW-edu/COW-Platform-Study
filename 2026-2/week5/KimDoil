@@ -1,0 +1,76 @@
+//1. CategoryRequestDto
+package com.example.demo.domain.todo.dto;
+
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+
+@Getter
+@NoArgsConstructor
+public class CategoryRequestDto {
+    private String category;
+    private String categoryType;
+    private Boolean isChecked;
+    private String titleId;
+}
+
+//2. CategoryResponseDto
+package com.example.demo.domain.todo.dto;
+
+import lombok.Builder;
+import lombok.Getter;
+
+@Getter
+@Builder
+public class CategoryResponseDto {
+    private int id;
+    private String categoryType;
+    private Boolean isChecked;
+    private String titleId;
+}
+
+//3. TodoRequestDto
+package com.example.demo.domain.todo.dto;
+
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+
+@Getter
+@NoArgsConstructor
+public class TodoRequestDto {
+    private String title;
+    private String content;
+    private String category;
+    private Boolean isCompleted;
+    private String userId;
+}
+
+//4. TodoResponseDto
+package com.example.demo.domain.todo.dto;
+
+import lombok.Builder;
+import lombok.Getter;
+
+@Getter
+@Builder
+public class TodoResponseDto {
+    private int id;
+    private String title;
+    private String content;
+    private String category;
+    private String userId;
+}
+
+//5. TodoUpdateDto
+package com.example.demo.domain.todo.dto;
+
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+
+@Getter
+@NoArgsConstructor
+public class TodoUpdateDto {
+    private String title;
+    private String content;
+    private String category;
+    private Boolean isCompleted;
+}
