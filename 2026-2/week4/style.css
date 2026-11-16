@@ -1,0 +1,356 @@
+body{
+  font-family: Pretendard;
+}
+.sidebar {
+  width: 320px;
+  background-color: #d9d9d9;
+  min-height: 100vh;
+  padding: 16px 24px;
+  /* 추가로 공부해야 할 부분 */
+  display: flex;
+  flex-direction: column;
+  /* 보완 */
+  height: 100vh;
+  position: fixed;
+  top:0;
+  left:0;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.sidebar-title{
+  background-color: #444444;
+  color:#ffffff;
+  padding: 12px 16px;
+  font-size : 24px;
+  font-weight: 600;
+  line-height: 140%;
+}
+
+.status-list{
+  list-style: none;
+  margin: 40px 12px;
+}
+
+.status-list li {
+  display:flex;
+  justify-content: space-between;
+  font-size: 16px;
+  padding: 4px;
+}
+
+.status-list .sub-item {
+  padding-left:24px;
+}
+
+.category-section {
+  /* margin-top:auto; */
+  position: absolute;
+  top: 50%;
+  left: 24px;
+  right: 24px;
+  transform: translateY(-50%);
+}
+
+.category-list{
+  list-style: none;
+  margin: 56px 12px;
+  padding: 0;
+}
+
+.category-list li {
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+  padding: 8px;
+}
+
+.category-name{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-left: 24px;
+}
+
+.dot{
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+}
+
+.school {
+  background-color: #ff5252;
+}
+
+.work {
+  background-color: #ffa447;
+}
+
+.club {
+  background-color: #d8f42b;
+}
+
+.home {
+  background-color: #4bea49;
+}
+
+.etc {
+  background-color: #4db5f5;
+}
+
+.trash-button {
+  width: 100%;
+  border: none;
+  min-height: 52px;
+  margin-top: auto;
+  padding: 10px 16px;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  gap: 16px;
+  cursor: pointer;
+}
+
+/* header */
+.container{
+  display:flex;
+  height:100vh;
+}
+.content{
+  flex:1;
+  min-width: 0;
+  /* 보완 */
+  margin-left: 320px;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.header{
+  height: 160px;
+  padding: 0 64px;
+  border-bottom: 1px solid #999999;
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-left{
+  display:flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.before-button{
+  border: none;
+  background:transparent;
+  cursor:pointer;
+
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.before-button img{
+  width: 48px;
+  height: 48px;
+}
+
+.header-date{
+  font-size: 36px;
+  margin:0;
+  font-weight: 700;
+  line-height: 140%;
+  color:#111111;
+}
+
+.header-progress{
+  font-size: 32px;
+  font-weight: 500;
+  color:#db2626;
+}
+
+/* Main + floating button */
+.main{
+  position: relative;
+  /* min-height: calc(100vh-160px); */
+  padding: 48px 64px 100px;
+
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  /*header는 스크롤 없이 고정  */
+  position: relative;
+
+}
+
+.todo-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.todo-item{
+  display:flex;
+  align-items: center;
+  gap: 16px;
+  min-height: 80px;
+  padding: 16px 24px;
+  background-color: #d9d9d9;
+}
+
+.todo-checkbox{
+  width: 20px;
+  height:20px;
+  margin:0;
+  accent-color: #111111;
+  cursor: pointer;
+  border-color: #767676;
+}
+
+.todo-content{
+  flex:1;
+  min-width:0;
+}
+
+  /* title + badge */
+.todo-title-row{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.todo-title{
+  font-size:18px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.todo-description{
+  margin:8px 0;
+  font-size:16px;
+  line-height: 160%;
+  color:#62748E;
+}
+
+.todo-badge{
+  display: inline-block;
+  padding: 4px 8px;
+  font-size:14px;
+  line-height: 140%;
+  border-radius: 4px;
+}
+
+.badge-school {
+  background-color: #ff5252;
+}
+
+.badge-work {
+  background-color: #ffa447;
+}
+
+.badge-club {
+  background-color: #d8f42b;
+}
+
+.badge-home {
+  background-color: #4bea49;
+}
+
+.badge-etc {
+  background-color: #4db5f5;
+}
+
+.todo-item:has(.todo-checkbox:checked) .todo-title{
+  text-decoration: line-through;
+  color:#777777;
+}
+
+.todo-actions{
+  display: flex;
+  align-items: center;
+}
+
+.edit-button, .delete-button{
+  padding: 8px 12px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.edit-button{
+  background-color: #ffffff;
+  color: #45556C;
+  border: 1px solid #ffffff;
+}
+
+.delete-button{
+  background-color: #ffffff;
+  color:#db2626;
+  border: 1px solid #ffffff;
+}
+
+.todo-input-area{
+  /* margin-top:32px; */
+  background-color: #d9d9d9;
+  min-height: 80px;
+
+  display: flex;
+  align-items: center;
+  padding: 16px 24px;
+
+  gap: 16px;
+}
+
+.todo-input-area .todo-checkbox:disabled{
+  cursor: not-allowed;
+  opacity: 80%;
+
+  width: 20px;
+  height:20px;
+
+}
+
+.todo-input{
+  width: 100%;
+  border:none;
+  outline: none;
+  background: transparent;
+  font-size: 18px;
+}
+
+.todo-input:placeholder {
+  color:#999999;
+}
+
+.floating-button{
+  position: fixed;
+  right: 40px;
+  bottom:40px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border:none;
+  background-color: #444444;
+  color: #ffffff;
+
+  font-size: 48px;
+  font-weight: lighter;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.floating-button:hover {
+  background-color: #333333;
+}
